@@ -1,0 +1,2 @@
+[2026-10-22T00:02:00-05:00] correo de PIN: La función mail() del servidor no pudo enviar el correo (el hosting puede tenerla desactivada: usa el modo smtp).
+[2026-10-22T00:51:36-05:00] correo de PIN: Falta el servidor SMTP (correo → smtp → host en config.php).

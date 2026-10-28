@@ -1,0 +1,33 @@
+# --- CTTAOA · carnet digital (Apache) ---
+Options -Indexes
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+# (Recomendado en producción) Forzar HTTPS: quita el "#" de las 2 líneas siguientes cuando tengas el certificado SSL activo.
+# RewriteCond %{HTTPS} !=on
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# Carpetas internas: nunca se sirven
+RewriteRule ^(app|storage|sql)(/|$) - [F,L]
+RewriteRule ^(config\.php|router_dev\.php)$ - [F,L]
+# Archivos reales (css, js) se sirven directo; todo lo demás va al controlador
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+RewriteRule ^ index.php [L,QSA]
+</IfModule>
+
+# WebAssembly (quitar el fondo de las fotos en el navegador)
+<IfModule mod_mime.c>
+  AddType application/wasm .wasm
+</IfModule>
+
+# Bloquear tipos de archivo sensibles
+<FilesMatch "\.(sql|log|bak|ini|md|env|json|lock)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>

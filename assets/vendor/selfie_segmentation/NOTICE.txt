@@ -1,0 +1,5 @@
+MediaPipe Selfie Segmentation (paquete npm @mediapipe/selfie_segmentation, versión 0.1.1675465747)
+Copyright Google LLC.
+Licencia: Apache License 2.0 (texto completo en LICENSE.txt, en esta misma carpeta).
+Fuente: https://www.npmjs.com/package/@mediapipe/selfie_segmentation · https://github.com/google-ai-edge/mediapipe
+Se incluye SIN modificaciones, solo para quitar el fondo de las fotografías en el navegador (assets/fondo.js).
