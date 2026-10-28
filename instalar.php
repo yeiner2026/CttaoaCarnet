@@ -1,5 +1,5 @@
 <?php
-// Cra el PRIMER administrador (solo funciona si no existe ningún usuario). Bórralo después de usarlo.
+// Craar el PRIMER administrador (solo funciona si no existe ningún usuario). Bórralo después de usarlo. TENLO PENDIENTE
 require __DIR__ . '/app/core.php';
 require __DIR__ . '/app/services.php';
 iniciar_sesion();
